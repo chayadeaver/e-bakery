@@ -9,8 +9,16 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <%= render 'layouts/nav' %>
 
-  <body>
-    <%= yield %>
-  </body>
+
+  <div class="container pt-3">
+    <div class="row pt-3">
+      <div class="col-md-6 pt-5">
+        <body>
+            <%= yield %> 
+        </body>
+      </div>
+    </div>
+  </div>
 </html>
