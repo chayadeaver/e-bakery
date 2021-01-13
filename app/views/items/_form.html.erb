@@ -1,42 +1,40 @@
-<%= form_with(model: item) do |form| %>
-  <% if item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= form_with(model: item) do |form| %>
+        <% if item.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-      <ul>
-        <% item.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+            <ul>
+              <% item.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+        <div class="md-6 pb-3">
+          <%= form.text_field :name, class: "form-control", placeholder: :name %>
+        </div>
+
+        <div class="md-6 pb-3">
+          <%= form.text_field :price, class: "form-control", placeholder: :price %>
+        </div>
+
+        <div class="md-6 pb-3">
+          <%= form.text_area :description, class: "form-control", placeholder: :description %>
+        </div>
+
+        <div class="md-6 pb-3">
+          <%= form.text_field :image_url, class: "form-control", placeholder: :image_url %>
+        </div>
+
+        <div class="actions pt-3 pb-3">
+          <%= form.submit %>
+        </div>
+      <% end %>
+
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :menu %>
-    <%= form.text_field :menu %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
