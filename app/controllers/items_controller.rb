@@ -4,7 +4,11 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    if params[:search]
+      @items = Item.where('name ILIKE ?', "%#{params[:search]}%")
+    else
+      @items = Item.all
+    end
   end
 
   # GET /items/1
@@ -69,6 +73,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:name, :price, :description, :image_url, :menu_id)
+      params.require(:item).permit(:name, :price, :description, :image_url, :menu_id, :search)
     end
 end
