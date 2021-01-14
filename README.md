@@ -1,5 +1,5 @@
 # EBakery
-A Rails application that displays a bakery menu with items.
+A Rails application that displays a bakery menu with items. A user can search through items by name, add new items, update an item, and delete an item.
 
 ## To Install
 
