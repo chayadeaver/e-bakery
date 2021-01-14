@@ -1,25 +1,12 @@
-# README
+# EBakery
+A Rails application that displays a bakery menu with items.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## To Install
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# e-bakery
+* Clone this repo to local machine `git clone <this-repo>`
+* Cd into directory and run `bundle install` to install dependencies
+* Make sure Postgres app is running. To install Postgres app, go [here](https://www.postgresql.org/download/)
+* Run `rails db:create` to create a database
+* Run `rails db:migrate` to create tables in database
+* Run `rails db:seed` to generate seed data
+* Run `rails s` to run server
